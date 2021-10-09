@@ -1,0 +1,42 @@
+{% block content %}
+{% load static  %}
+
+<div class="container sm-1" style="margin-bottom:20px;margin-top:40px">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-9">
+     <div class="container-fluid" style="background-color:#212529; opacity:0.9; margin-top:2px;">
+    <form action="/download" method="POST"  enctype="multipart/form-data">
+        {% csrf_token %}
+    <label for="basic-url" class="display-1" style="color:white">Enter Url</label></br>
+    <label for="basic-url"  class="display-6" style="color:red">Here You can download <h6 class="display-6"style="color:red">Reddit video</h6></label></br>
+    <div class="input mb-3">
+      <input type="text" class="form-control xs-7" name="link" id="basic-url" aria-describedby="basic-addon3" placeholder="www.reddit.com//"><br>
+      <center><button id="btx" type="submit" onclick="myFunction()" class="btn btn-outline-success mb-3">Fetch</button></center>
+      </div>
+      <center>
+      <div class="progress" id="prgs" style="display:none">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:100%">Processing...</div>
+      </div>
+      </center>
+       {% if uploaded_file_url %}
+          <a type="button" class="btn btn-outline-success mb-3" href=" {{MEDIA_URL}}{{uploaded_file_url}} " download="vid.mp4" >Click Here to Download</a><br>
+       {% endif %}
+    </form>
+         <br>
+    </div>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+{% endblock %}
+<script>
+    function myFunction() {
+      var x = document.getElementById("prgs");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      }
+}
+</script>

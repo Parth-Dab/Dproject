@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Reddit Video Downloader</title>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/images/rdt1.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</head>
+{% include 'style.html' %}
+<body style="background-color:white">
+<div id="div1" class="div1">
+    {% include 'Header.html'%}
+    {% block content %}
+    {% endblock %}
+</div>
+
+<div id="div2" class="div2" >
+<br><br>
+<br>
+<br>
+  {% include 'download.html' %}
+<br><br>
+<br><br><br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+
+<div id="div5" class="div5" >
+<br><br>
+<br>
+<br>
+  {% include 'blog.html' %}
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+
+<div id="div4" class="div4">
+<br><br>
+<br>
+<br>
+    {% include 'about_us.html' %}
+<br><br>
+<br>
+<br>
+</div>
+
+<div id="div3" class="div3">
+<br><br>
+<br>
+    {% include 'contact_us.html' %}
+
+</div>
+<div id="footer" class="footer" style="background-color:#212121" style="margin-top:0px;">
+    {% include 'Footer.html' %}
+</div>
+</body>
+</html>
